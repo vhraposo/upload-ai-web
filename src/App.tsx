@@ -9,7 +9,9 @@ import { VideoInputForm } from './components/video-input-form';
 import { PromptSelect } from './components/prompt-select';
 
 export function App() {
-  
+  function handlePromptSelected(template: string){
+    console.log(template)
+  }
   return (
    <div className='min-h-screen flex flex-col'>
       <div className="px-6 py-3 flex items-center justify-between border-b">
@@ -43,10 +45,9 @@ export function App() {
           <Separator />
 
           <form className='space-y-6'>
-
           <div className='space-y-2'>
               <Label>Prompt</Label>
-              <PromptSelect />
+              <PromptSelect onPromptSelected={handlePromptSelected} />
           </div>
 
             <div className='space-y-2'>
