@@ -36,11 +36,11 @@ export function VideoInputForm(props: VideoInputFormProps){
         setVideoFile(selectedFile)
     }
 
-    async function convertVideoToAudio(video: File){
+    async function convertVideoToAudio(video: File) {
         console.log('Convert started.')
-
+    
         const ffmpeg = await getFFmpeg()
-
+    
         await ffmpeg.writeFile('input.mp4', await fetchFile(video))
 
         // ffmpeg.on('log', log => {
@@ -103,7 +103,7 @@ export function VideoInputForm(props: VideoInputFormProps){
         await api.post(`/videos/${videoId}/transcription`,{
             prompt
         })
-
+    
         setStatus('sucess')
 
         props.onVideoUploaded(videoId)
