@@ -6,6 +6,7 @@ import { Label } from './components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
 import { Slider } from './components/ui/slider';
 import { VideoInputForm } from './components/video-input-form';
+import { PromptSelect } from './components/prompt-select';
 
 export function App() {
   
@@ -45,19 +46,8 @@ export function App() {
 
           <div className='space-y-2'>
               <Label>Prompt</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder='Selecione um prompt...' />
-                                      
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value='title'>Título do Youtube</SelectItem>
-                  <SelectItem value='description'>Descrição do Youtube</SelectItem>
-
-                </SelectContent>
-              </Select>
-             
-            </div>
+              <PromptSelect />
+          </div>
 
             <div className='space-y-2'>
               <Label>Modelo</Label>
